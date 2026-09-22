@@ -14,7 +14,6 @@ public class Vacuna {
         this.cantDosis=aCantDosis;
     }
 
-    /*
     @Override
     public String toString (){
         String stringBuffer;
@@ -23,8 +22,7 @@ public class Vacuna {
         stringBuffer+=this.getEnfermedadPrevenida();
         stringBuffer+=this.getCantDosis();
         return stringBuffer;
-    }*/
-
+    }
 
     //GETTERS AND SETTERS
     public String getMarca() {return this.marca;}
