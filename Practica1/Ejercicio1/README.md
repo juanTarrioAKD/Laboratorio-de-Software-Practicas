@@ -20,3 +20,26 @@ Para el inciso C nos solicitan comentar el toString(), la salida por terminal fu
 al no sobreescribir toString() ejecuta el que posee la clase
 Object (todo hereda de Object) el cual imprime el nombre completo
 de la clase + @ con el hashCode() de la instancia en memoria.
+
+---
+
+Ejericico 1D:
+
+La diferencia entre las comparaciones difiere de que es lo que se
+esta comparando:
+
+    System.out.println(vacunas[0]==vacuna2);
+
+En este caso lo con el == lo que se esta comparando es si apuntana  la 
+misma direccion de memoria, en este caso fueron creados con distintos
+new, por lo tanto cada uno tiene su direccion de memoria en heap propia.
+
+    System.out.println(vacunas[0].equals(vacuna2));
+
+En este caso .equals lo que hace es ejecutar el .equals de Objetc ya que 
+no se sobreescribio en la clase Vacuna. Lo que hace Obeject es comparar 
+cada campo con el operador == , como todas tienen datos disintos da false.
+
+
+---
+
