@@ -1,0 +1,14 @@
+Inciso D: La coleccion esta ordenada sin importar como se agregan los alumnos, esto gracias
+          a la interfaz Set y clase TreeSet, las cuales no permiten agregar duplicados
+          y mantener un orden. Como ordena? gracias al compareTo treeSet al hacer un .add
+          recorre el arbol haciendo un compareTo sobre los elementos para encontrar el sitio
+          donde va. Como se elige el criterio de ordenamiento? gracias a la interfaz generica
+          Comparable<T> la cual permite enviar una tipo por parametro para comparar, en este
+          caso public class Alumno implements Comparable<Alumno> y en el metodo lo overrideas
+          y lo haces por legajo en este caso.
+
+Inciso E: Seria lo mismo pero modificando el compareTo de Alumno, para que compare por nombre
+          y apellido en vez de legajo.
+
+Inciso F: Seria igual a lo que ya esta hecho pero la Clase Materia seria pero en vez de pasarle
+          a la clase generica Set Alumno se haria una clase abtracta Persona y seria: treeSet<Persona>

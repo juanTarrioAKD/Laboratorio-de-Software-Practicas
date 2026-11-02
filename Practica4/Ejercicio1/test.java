@@ -1,7 +1,7 @@
 package Practica4.Ejercicio1;
 
 public class test {
-    public static void main (String[] args){
+    public static void main (String[] args) {
         Materia materiaPrueba = new Materia("Laboratorio de Software");
         Alumno alumno1 = new Alumno("juan1", "tarrio1", 100009, 1000001);
         Alumno alumno2 = new Alumno("juan1", "tarrio1", 100008, 1000002);
