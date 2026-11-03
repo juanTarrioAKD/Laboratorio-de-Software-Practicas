@@ -1,1 +1,15 @@
 
+    i) no compila, da error de compilacion ya que para Java son tipos distitos. Los tipos correspondietes serian List, ArrayList, etc.
+       Lo que va dentro del <> tiene que ser igual, ya que aunque sean superclases o subclases para Java el tipo es List y si tienen
+       tipos <T> distintos son tipos de datos distintos.
+
+    ii) no compila por el mismo error de arriba.
+
+    iii) Veterinaria <?> vet = new Veterinaria<Gato>(); esta sentencia si compila ya que se esta usando la etiqueta generica
+         que es lo mismo que extender de Object. Lo que pasa con estas etiquetas es que son solo de lectura, no se pueden
+         escribir.  vet.setAnimal(new Gato()); por lo tanto esta linea tira error.
+
+    iv) Veterinaria vet = new Veterinaria ();
+        vet.setAnimal(new Perro());  Esta sentencia se puede en el unico caso que veterinaria tenga una List o ArrayList de animales
+        o Perro dentro el cual tenga un metodo setAnimal que agregue a la lista o que posea un campo Animal y se pueda setear un
+        unico animal o perro.
