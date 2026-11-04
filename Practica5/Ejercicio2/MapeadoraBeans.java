@@ -1,39 +1,21 @@
 package Practica5.Ejercicio2;
 
-import java.io.*;
-import java.io.FileWriter;
-import java.io.PrintWriter;
-import java.lang.reflect.*;
+import java.lang.reflect.Field;
 
 public class MapeadoraBeans {
 
-    public void generarFile(Object object) {
-        Class<?> clazz = object.getClass();
-        String nombreArchivo = clazz.getSimpleName() + ".txt";
-        if (clazz.isAnnotationPresent(Archivo.class)) {
-            Archivo anotacionArchivo = clazz.getAnnotation(Archivo.class);
-            if (!anotacionArchivo.nombre().isEmpty()) {
-                nombreArchivo = anotacionArchivo.nombre();
-            }
-        }
+    public static void main (String[] args) throws Exception{
+        Mapeado mapeado = new Mapeado();
 
-        try (PrintWriter writer = new PrintWriter(new FileWriter(nombreArchivo))) {
-            writer.println("<nombre clase>" + clazz.getSimpleName() + "</nombre clase>");
-
-            for (Field field : clazz.getDeclaredFields()) {
-                if (field.isAnnotationPresent(AlmacenarAtributo.class)) {
+        if (mapeado.getClass().isAnnotationPresent(Archivo.class)){
+            System.out.println("<nombre clase>"+mapeado.getClass().getSimpleName()+".txt"+"</nombre clase>");
+            for (Field field : mapeado.getClass().getDeclaredFields()){
+                if (field.isAnnotationPresent(AlmacenarAtributo.class)){
+                    System.out.println("<nombre atributo>"+field.getName()+"</nombre atributo>");
                     field.setAccessible(true);
-                    String nombreAtributo = field.getName();
-                    Object valorAtributo = field.get(object);
-
-                    writer.println("<nombre atributo>" + nombreAtributo + "</nombre atributo>");
-                    writer.println("<nombre valor>" + valorAtributo + "</nombre atributo>");
+                    System.out.println("<nombre valor>"+field.get(mapeado)+"</nombre valor>");
                 }
             }
-        } catch (IOException e) {
-            System.err.println("Error al escribir el archivo");
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
         }
     }
 }
