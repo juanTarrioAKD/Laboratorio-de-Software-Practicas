@@ -1,0 +1,9 @@
+2. Con los comentarios no compila, ya que hay sentencias que nunca se van a ejecutar (las lineas que
+   estan debajo del return 1 nunca se van a poder ejecutar). Sin los comentarios funciona, ya que
+   el bloque finally se va a ejecutar siempre, y lo que va a pasar es lo siguiente:
+     . se ejcuta el bloque try e imprime: "Va a retornar 1"
+     . se guarda el valor del return 1
+     . se ejecuta el bloque finally (se ejecuta siempre un bloque finally)
+     . imprime "Va a retornar 2"
+     . se elimina el 1 y se guarda 2 en el valor de retorno
+     . imprime 2

@@ -1,0 +1,13 @@
+1a. Lo que ocurre en este caso, es que da error la firma del metodo. Porque este esta como @Override
+    y no existe ningun metodo de su calse super (Object) que tenga un metodo que se llame tostring con
+    s minuscula (es casesensitive Java). La solucion es poner la s como mayuscula S.
+    Luego de modificarla no se imprime ningun warning por el @Deprecate (indica que el metodo ya no es confiable
+    y que va a ser reemplazado dentro de poco), porque el metodo testearya tiene una anotacion de @suppressWarnings
+    y como parametro se envia "Deprecate". Si se elimina esa anotacion si apareceria el warning de @Deprecate.
+
+1b. Al eliminar el suppresswarning aparece el metodo resaltado en amarillo indicando que es un metodo Deprecate.
+
+1c. Poner la etiqueta en la clase directamente no es una buena practica, ya que se van a silenciar todos los metodos
+    que usen algun metodo Deprecate, esto puede causar confuciones o hacer que alguien use un metodo Deprecate pensando
+    que es el actualizado. La mejor manera de usarlo es poner la etiqueta en los metodos necesarios aunque tenga que escribirse
+    en casi todos.

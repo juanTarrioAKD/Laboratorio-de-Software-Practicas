@@ -1,0 +1,8 @@
+ 3.
+ el ejercicio 3 imprime lo siguiente:
+
+ . imprime test3
+ . imprime primer try
+ . lanza la exception pero se ejecuta el bloque finally e imprime finally del segundo try
+ . se ejecuta el catch y atrapa la exception e imprime se capturo la exception del ...
+ . se ejecuta el finally e imprime finally del primer try

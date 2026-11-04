@@ -1,0 +1,3 @@
+1. El codigo no compila ya que hay un bloque catch que nunca va a poder atrapar nada. Ya que todo siempre va
+   a ser atrapado por catch exception1. La solucion seria intercambiar el orden de los catch. Haciendo una especie
+   de filtros de tipos de exceptions.
